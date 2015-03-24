@@ -1,0 +1,6 @@
+<h1><%= @tag.title %></h1>
+<ul>
+  <% @tag.articles.order('created_at DESC').each do |article|  %>
+      <li><%= link_to article.title, article_path(article) %></li>
+  <% end %>
+</ul>

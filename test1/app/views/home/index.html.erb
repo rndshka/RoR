@@ -1,0 +1,18 @@
+<h1>Home#index</h1>
+<div id="left">
+  <%= form_for @article, remote: true do |f| %>
+    <%= f.text_field :body %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div id="right">
+  <span>  <%= Article.count %> запросов </span>
+  <ul id="text">
+    <% if !Article.all.blank? %>
+      <% for item in Article.all %>
+        <li><%= item.created_at %></li>
+      <% end %>
+    <% end %>    
+  </ul>
+</div>

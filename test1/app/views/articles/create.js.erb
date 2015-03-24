@@ -1,0 +1,3 @@
+$('#right span').html('<%= escape_javascript("#{Article.count}: #{Russian.p(Article.count, "запрос", "запроса", "запросов")}")%>');
+$('#right ul').append('<li><%= escape_javascript("#{@article.created_at}")%></li>');
+$('#article_body').val('')

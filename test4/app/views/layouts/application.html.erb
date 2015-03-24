@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <ul>
+    <li><%= link_to 'Список авторов', authors_path %></li>
+    <li><%= link_to 'Список статей', articles_path %></li>
+    <li><%= link_to 'Отчет', report_index_path %></li>
+  </ul>
+</header>
+<%= yield %>
+
+</body>
+</html>

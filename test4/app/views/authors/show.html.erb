@@ -1,0 +1,15 @@
+<h1><%= @author.name %></h1>
+
+<p><%= @author.email %></p>
+<p><%= @author.city %></p>
+<p><%= @author.address %></p>
+<p><%= @author.birthday %></p>
+
+
+Статьи
+
+<ul>
+  <% @author.articles.order('created_at DESC').each do |article| %>
+      <li><%= link_to article.title, article_path(article) %> [<% article.tags.each do |tag| %> <%= link_to tag.title %> <% end %>]</li>
+  <% end %>
+</ul>

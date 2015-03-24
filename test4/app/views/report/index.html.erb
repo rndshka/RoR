@@ -1,0 +1,9 @@
+<h1>Report#index</h1>
+
+<ul>
+  <% Dir.foreach(File.join(Rails.root, 'public', 'reports')) do |item| %>
+      <% next if item == '.' or item == '..' %>
+
+      <li><%= link_to item, report_show_path(:item => item) %></li>
+  <% end %>
+</ul>
